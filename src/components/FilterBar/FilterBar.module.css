@@ -1,0 +1,160 @@
+.filterBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .filterBar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding: 1rem 0;
+  }
+}
+
+/* Tablet-specific adjustments */
+@media (max-width: 1024px) {
+  .filterBar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+    padding: 1rem 0;
+  }
+
+  .sliderWrapper {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .slider {
+    min-width: 0;
+    width: 100%;
+    margin: 0 0.5rem;
+  }
+}
+
+.pricingSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .pricingSection {
+    justify-content: center;
+    gap: 0.8rem;
+  }
+}
+
+.label {
+  font-weight: bold;
+  color: #7fffd4;
+  margin-right: 0.5rem;
+  white-space: nowrap;
+}
+
+.checkboxLabel {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  margin: 0;
+}
+
+.sliderWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 300px;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .sliderWrapper {
+    min-width: auto;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+}
+
+.sliderLabel {
+  color: #7fffd4;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .sliderLabel {
+    text-align: center;
+  }
+}
+
+.slider {
+  flex: 1;
+  margin: 0 1rem;
+  min-width: 200px;
+}
+
+@media (max-width: 768px) {
+  .slider {
+    margin: 0;
+    min-width: auto;
+  }
+}
+
+.sliderValue {
+  color: #fff;
+  font-size: 0.9rem;
+  min-width: 3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .sliderValue {
+    font-size: 0.8rem;
+    min-width: 2.5rem;
+  }
+}
+
+.resetBtn {
+  background: transparent;
+  color: #7fffd4;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  white-space: nowrap;
+  outline: none;
+}
+
+.resetBtn:hover {
+  background: #7fffd4;
+  color: #222;
+  border-color: #7fffd4;
+}
+
+@media (max-width: 768px) {
+  .resetBtn {
+    align-self: center;
+    padding: 0.7rem 2rem;
+  }
+}

@@ -1,69 +1,98 @@
-# React + TypeScript + Vite
+# CLO-SET CONNECT Store Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A scalable, maintainable, and modular React + Redux Toolkit application for the CLO-SET CONNECT Store Page ([https://connect.clo-set.com/store](https://connect.clo-set.com/store)).
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Content List**: Responsive grid of product cards with image, title, user, and pricing info
+- **Filtering**: Filter by pricing option (Paid, Free, View Only), price range (slider), and keyword search
+- **Sorting**: Sort by item name, higher price, or lower price
+- **Infinite Scroll**: Loads more items as you scroll
+- **Skeleton UI**: Loading skeletons for smooth UX
+- **State Persistence**: Filter/search state persists via URL query params (no browser storage)
+- **Service Worker**: Caches product images for faster loads and offline support
+- **Image Optimization**: Responsive images, lazy loading, and error handling
+- **Mobile-First Design**: Fully responsive for all device sizes
+- **Testing**: Unit and integration tests with React Testing Library & Jest
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React** (with TypeScript)
+- **Redux Toolkit** (state management)
+- **CSS Modules** (scoped styling)
+- **rc-slider** (price range slider)
+- **query-string** (URL state sync)
+- **Jest** & **React Testing Library** (testing)
+- **Service Worker** (image caching)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. **Clone the repository**
+```bash
+git clone <your-repo-url>
+cd clo-set-connect-store
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 2. **Install dependencies**
+```bash
+npm install
 ```
+
+### 3. **Run the app locally**
+```bash
+npm run dev
+```
+- The app will be available at [http://localhost:5173](http://localhost:5173) (or as shown in your terminal)
+
+### 4. **Run tests**
+```bash
+npm test
+```
+
+## 📝 Project Structure
+
+```
+├── public/
+│   └── service-worker.js      # Service worker for image caching
+├── src/
+│   ├── api/                  # API wrapper for fetching content
+│   ├── components/           # Reusable UI components
+│   ├── features/             # Redux slices, thunks, selectors
+│   ├── store/                # Redux store setup
+│   ├── types/                # TypeScript types
+│   ├── App.tsx               # Main app component
+│   └── main.tsx              # Entry point (service worker registration)
+├── package.json
+├── README.md
+└── ...
+```
+
+## 🧩 Key Implementation Details
+
+- **Redux Toolkit** for state management (filters, search, sorting, pagination, price range)
+- **URL Query Parameters** for state persistence (no localStorage/sessionStorage)
+- **Service Worker** caches all product images (cache-first strategy)
+- **Image Optimization**: Responsive `<img>` with `loading="lazy"`, `srcSet`, and error fallback
+- **Responsive Design**: Grid and filter bar adapt to all screen sizes
+- **Testing**: Includes tests for all major components and features
+
+## 🛡️ How to Customize
+- Update API endpoint in `src/api/contentsApi.ts` if needed
+- Adjust grid breakpoints in `InfiniteScrollGrid.module.css` for custom layouts
+- Add more filters or features in Redux slices/components
+
+## 📝 What We Did
+- Built a modular, scalable React + Redux app from scratch
+- Implemented all required and optional features:
+  - Pricing option filter, reset, and persistence
+  - Keyword search (combinable with filters)
+  - Responsive grid with infinite scroll
+  - Sorting and price slider (optional features)
+  - Skeleton UI for loading
+  - Service worker for image caching
+  - Image optimization on render
+  - Full test suite and robust error handling
+- Ensured accessibility and mobile-first design
+
+## 📄 License
+MIT (or your preferred license)

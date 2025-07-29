@@ -1,0 +1,108 @@
+.skeletonGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .skeletonGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skeletonGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skeletonGrid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+}
+
+.skeletonCard {
+  background: #222;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  height: 100%;
+  min-height: 280px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .skeletonCard {
+    min-height: 250px;
+    padding: 0.8rem;
+    gap: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skeletonCard {
+    min-height: 220px;
+    padding: 0.7rem;
+    gap: 0.5rem;
+  }
+}
+
+.skeletonImage {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #333;
+  border-radius: 6px;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+.skeletonText {
+  height: 18px;
+  width: 80%;
+  background: #333;
+  border-radius: 4px;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .skeletonText {
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skeletonText {
+    height: 14px;
+  }
+}
+
+.skeletonTextShort {
+  height: 14px;
+  width: 40%;
+  background: #333;
+  border-radius: 4px;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .skeletonTextShort {
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skeletonTextShort {
+    height: 10px;
+  }
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
